@@ -1,0 +1,5 @@
+Useful documentation for solving this challenge:
+-) Explicit and implicit intents: https://developer.android.com/guide/components/intents-filters
+-) Retrieving a result from an activity: https://developer.android.com/training/basics/intents/result
+-) The Serializable interface: https://developer.android.com/reference/java/io/Serializable
+-) Java reflection: https://www.oracle.com/technical-resources/articles/java/javareflection.html (edited) 
