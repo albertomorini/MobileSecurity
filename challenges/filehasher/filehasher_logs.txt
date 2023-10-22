@@ -1,3 +1,0 @@
---------- beginning of main
-10-14 13:52:41.129   320   320 I MOBIOTSEC: /data/YM3oPnYG.dat
-10-14 13:52:41.970   320   320 I MOBIOTSEC: Good job! The expected hash and the received hash match! The flag is FLAG{piger_ipse_sibi_obstat}
