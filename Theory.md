@@ -321,3 +321,6 @@ X509 standard is the most used.
 
 **Chain of trust:** we trust the certificates which are trusted by at least one certificate we trust 
 
+
+
+## Chap 5
