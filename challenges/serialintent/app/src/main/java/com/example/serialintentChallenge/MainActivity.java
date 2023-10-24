@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MOBIOTSEC";
 
     //problem: object are com.example.maliciousactivity.FlagContainer
+    //SOLUTION: create a package com.example.victimapp and put there the class
     protected class FlagContainer implements Serializable {
         private String[] parts;
         private ArrayList<Integer> perm;
@@ -64,6 +65,15 @@ public class MainActivity extends AppCompatActivity {
                         //maybe modify object name
                         //use shared library (unlikely)
 
+
+                        //CHECKOUT
+                        try{
+                            FlagContainer fc = (FlagContainer) intent.getSerializableExtra("flag");
+                            //I dunno man, found out also this method, should be safer than Bundle.getSerializable
+                        }catch(Exception ex){
+                            Log.d(TAG,ex.getMessage());
+                        }
+                        
 
 
                         Bundle extras = intent.getExtras();
