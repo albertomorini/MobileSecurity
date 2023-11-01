@@ -324,3 +324,84 @@ X509 standard is the most used.
 
 
 ## Chap 5
+
+
+#### Activities
+To start an activity:
+- startActivity(intent)
+- Intent can be either explicit or implicit
+
+**New activities can also get an “answer”/“results**
+```
+Inent i = new Intent(…);
+Int requestCode = 400;
+startActivityForResult(i,requestCode)
+```
+#### Services
+- To start a service, we can use Intent i = new Intent(…)
+- **Must be** an explicit intent (for security reasons)
+- then -> startService(i)
+
+**Background services**: it performs an operation that isn’t directly noticeable by the user
+- start with startService()
+- startService() -> s.onCreate() -> s.onStartCommand()
+
+**Foreground services**: performs an operation that is noticeable to the user
+- start with startService() + start foreground (from the service’s onCreate)
+
+
+#### Implementing services
+**Bound services**
+>a service is bound When an app binds to it by calling bindService()
+
+- Client -> service communications
+- If the service needs to send back a message, the client needs to create a Messenger in the client
+
+**Broadcast receiver**: 
+>to send an intent around the system, in way to woke up relevant broadcast receivers
+
+`sendBroadcast(intent)`
+
+*Broadcast receiver registration*
+- via manifest + intent filter
+- At run time (only for broadcast receivers)
+`MyReceiver custom rec = new MyReceiver();
+``IntentFilter infill = new IntentFilter(“com.some.action”)
+
+
+**Content provider**
+> share data across application
+
+App <-> ContentResolver <-> ContentProvider <-> DataSource
+
+*Built-in content providers*
+- browser (bookmarks, history)
+- CallLog (missed calls, call details)
+- Contacts (contact details)
+- Media store (media files)
+- Settings (device settings and preferences)
+
+### Make an app’s data public
+
+Two options:
+1) create own content provider (extending ContentProvider class)
+2) Add the data to existing provider - if there’s one that controls the same type of data and you have permission to write
+
+All content providers implement a common interface for:
+- querying the provider and returning results
+- Adding
+- Altering
+- Deleting
+
+How a content provider actually stores its data under the cover is up to its designer
+
+#### Data model
+Content providers expose their data as simple table (like db) model.
+- each row is a record, and each column is data of particular type and meaning
+- every record includes a numeric_ID field that uniquely identifies the record within the table
+`content://com.android.contacts/contacts/100`
+
+- Query returns a set of zero or more records
+- The retrieved data is exposed by a cursor that can be used to iterate backward of foreword through the result set
+	- Cursor only to read
+	- Add, modify, delete —> mus use ContentResolver object

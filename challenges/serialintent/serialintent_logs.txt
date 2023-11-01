@@ -1,8 +1,2 @@
 --------- beginning of main
-10-22 15:13:21.317 31269 31269 D MOBIOTSEC: MALICIOUS ACTIVITY STARTED
-10-22 15:13:21.640 31299 31299 E MOBIOTSEC: shuffling
-10-22 15:13:21.641 31299 31299 E MOBIOTSEC: sending back intent
-10-22 15:13:21.655 31269 31269 D MOBIOTSEC: ActivityResult{resultCode=RESULT_OK, data=Intent { (has extras) }}
-10-22 15:13:21.655 31269 31269 D MOBIOTSEC: key: flag
-10-22 15:13:21.656 31269 31269 D MOBIOTSEC: Parcelable encountered ClassNotFoundException reading a Serializable object (name = com.example.victimapp.FlagContainer)
-10-22 15:13:21.656 31269 31269 D MOBIOTSEC: OKOK?
+10-29 14:12:08.445  8671  8671 D MOBIOTSEC: Malicious app started
